@@ -33,12 +33,6 @@ call neobundle#util#set_default(
       \ 'g:neobundle_rm_command')
 
 function! neobundle#commands#install(bang, bundle_names) "{{{
-  if neobundle#util#is_sudo()
-    call neobundle#util#print_error(
-          \ '"sudo vim" is detected. This feature is disabled.')
-    return
-  endif
-
   let bundle_names = split(a:bundle_names)
 
   let bundles = !a:bang ?
